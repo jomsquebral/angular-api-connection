@@ -1,27 +1,26 @@
-# AngularApiConnection
+# Angular Api Connection
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+
+# Output
+![screenshot](https://github.com/jomsquebral/angular-api-connection/assets/13448557/4204582f-2c32-4b8a-a3eb-7ec07a8c0793)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Connection to API
 
-## Build
+  header = new HttpHeaders({
+    "x-rapidapi-host" : "movies-api14.p.rapidapi.com",
+    "x-rapidapi-key" : "033f789094msh481735d1ed57eb6p19ddf3jsn2d23a8b3b157"
+  });
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  url = "https://movies-api14.p.rapidapi.com/shows";
 
-## Running unit tests
+  constructor(private http : HttpClient) {}
+    getshowlist(){
+      return this.http.get(this.url, {headers : this.header})
+  }
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
