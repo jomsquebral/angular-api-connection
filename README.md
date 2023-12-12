@@ -11,7 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 
 ## Connection to API
-
+```
   header = new HttpHeaders({
     "x-rapidapi-host" : "movies-api14.p.rapidapi.com",
     "x-rapidapi-key" : "033f789094msh481735d1ed57eb6p19ddf3jsn2d23a8b3b157"
