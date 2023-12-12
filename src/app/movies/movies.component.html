@@ -1,0 +1,26 @@
+<div class="container p-3">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><h1>Movies</h1></div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="mb-3">
+                <input type="search" class="form-control" [(ngModel)]="searchText" placeholder="Enter Keyword">
+              </div>
+            
+        </div>
+    </div>
+        <div class="row">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" *ngFor="let show of shows.movies | searchfilter: searchText">
+            <div class="card">
+                <img class="card-img-top" src="{{show.poster_path}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{show.original_title}}</h5>
+                  <p class="card-text"></p>
+                  <p><span class="genre" *ngFor="let genre of show.genres">{{genre+" "}}</span> </p>
+                  <button type="button" (click)="showdetails(show)" class="btn btn-primary">More info</button>
+                </div>
+              </div>
+          </div>
+        </div>
+ 
+</div>
+
